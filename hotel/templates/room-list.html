@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td{
+            border: 1px solid black;
+
+        }
+    </style>
+</head>
+<body>
+    
+{%block body%}
+<div class="container">
+    <div class="row">
+     <div class="col-2"></div>
+     <div class="col-8">
+         <table class="table">
+             <tr>
+                 <th>Hotel</th>
+                 <th>Doornum</th>
+                 <th>Capacity</th>
+                 <th>Description</th>
+                 <th>Price</th>
+                 <th>Room_type</th>
+                 <th>fmenu</th>
+
+                
+
+                
+             </tr>
+             {%for r in rooms%}
+                <tr>
+                 <td>{{r.hotel}}</td>
+                 <td>{{r.doornum}}</td>
+                 <td>{{r.capacity}}</td>
+                 <td>{{r.description}}</td>
+                 <td>{{r.price}}</td>
+                 <td>{{r.rtype}}</td>
+                 <td>{{r.fmenu}}</td>
+
+
+                 <td>
+                     <a href="{%url 'room-detail' r.id %}" class="btn btn-outline-info">View</a>
+                     {% comment %} <a href="{%url 'room-delete' r.id%}" class="btn btn-outline-danger">Delete</a> {% endcomment %}
+                     {% comment %} <a href="{%url 'room-edit' r.id%}" class="btn btn-outline-warning">Edit</a> {% endcomment %}
+
+                 </td>
+                </tr>
+             {%endfor%}
+         </table>
+     </div>
+     <div class="col-2"></div>
+    </div> 
+ </div>
+{%endblock%}
+</body>
+</html>

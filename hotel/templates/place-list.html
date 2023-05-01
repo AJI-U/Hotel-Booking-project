@@ -1,0 +1,17 @@
+
+{%block body%}
+<div class="container">
+    <div class="row">
+     <div class="col-2"></div>
+     <div class="col-8">
+        <div>
+            {%for city in place %}
+            <a href="{%url 'hotel-list'%}?city={{city.city}}">{{city.city}}</a>
+            {%endfor%}
+        </div>
+     </div>
+     <button type="submit" class="btn btn-success"></button>
+     <div class="col-2"></div>
+    </div> 
+ </div>
+{%endblock%}

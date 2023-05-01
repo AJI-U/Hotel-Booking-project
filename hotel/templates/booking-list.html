@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {%if booking%}
+        {%for order in booking%}
+        <div><p>{{order.hotel.hotelname}}</p></div>
+        <div><p>{{order.checkin}}</p></div> 
+        <div><p>{{order.checkout}}</p></div> 
+        <div><p>{{order.room}}</p></div>
+
+       <a href="{%url 'review-add' id=order.hotel_id%}">Add review</a>
+
+
+        {%endfor%}
+    {%else%}
+    <p>No bookings</p>
+    {%endif%}
+    
+</body>
+</html>
